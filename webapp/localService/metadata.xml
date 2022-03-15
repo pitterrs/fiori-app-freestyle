@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://ecc20fc2-93b9-4b64-ae23-bcf39405ffbe.abap.us10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ecc20fc2-93b9-4b64-ae23-bcf39405ffbe.abap.us10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ecc20fc2-93b9-4b64-ae23-bcf39405ffbe.abap.us10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ecc20fc2-93b9-4b64-ae23-bcf39405ffbe.abap.us10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ecc20fc2-93b9-4b64-ae23-bcf39405ffbe.abap.us10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ecc20fc2-93b9-4b64-ae23-bcf39405ffbe.abap.us10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ecc20fc2-93b9-4b64-ae23-bcf39405ffbe.abap.us10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ecc20fc2-93b9-4b64-ae23-bcf39405ffbe.abap.us10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ecc20fc2-93b9-4b64-ae23-bcf39405ffbe.abap.us10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ecc20fc2-93b9-4b64-ae23-bcf39405ffbe.abap.us10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://ecc20fc2-93b9-4b64-ae23-bcf39405ffbe.abap.us10.hana.ondemand.com/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="cds_zma0_sfut_supplier_ui" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="SupplierDataSetType" sap:label="Consumption layer for supplier data" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ebeln"/>
+                    <PropertyRef Name="ebelp"/>
+                    <PropertyRef Name="etenr"/>
+                    <PropertyRef Name="pkkey"/>
+                    <PropertyRef Name="pabnum"/>
+                    <PropertyRef Name="pabpos"/>
+                </Key>
+                <Property Name="accept_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Update_mc" Type="Edm.Boolean" sap:label="Dyn. Method Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Purchase Document" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ebelp" Type="Edm.String" Nullable="false" MaxLength="5" sap:display-format="NonNegative" sap:label="Purchase Item" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="etenr" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="Schedule Line" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="pkkey" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:label="Kanban Id"/>
+                <Property Name="pabnum" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="JIT Call Number" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="pabpos" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="NonNegative" sap:label="JIT Call Item" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="bsart" Type="Edm.String" MaxLength="4" sap:label="PO Type" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="matnr" Type="Edm.String" MaxLength="18" sap:label="Material" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="MAKTX" Type="Edm.String" MaxLength="40" sap:label="Material Description" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="werks" Type="Edm.String" MaxLength="4" sap:label="Plant" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="plant_name" Type="Edm.String" MaxLength="30" sap:label="Plant Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="bal_qty_w_asn" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Quantity" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="eindt" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Due Date" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="berid" Type="Edm.String" MaxLength="10" sap:label="MRP Area" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="bertx" Type="Edm.String" MaxLength="40" sap:label="MRP Area Text" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="lifnr" Type="Edm.String" MaxLength="10" sap:label="Vendor Order From" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="vendor_name" Type="Edm.String" MaxLength="35" sap:label="Vendor Order From Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ship_from" Type="Edm.String" MaxLength="35" sap:label="Vendor Ship From" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ship_from_name" Type="Edm.String" MaxLength="35" sap:label="Vendor Ship From Name" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ship_to" Type="Edm.String" MaxLength="10" sap:label="Ship to Location" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="ekgrp" Type="Edm.String" MaxLength="3" sap:label="Purchasing Group" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="dispo" Type="Edm.String" MaxLength="3" sap:label="MRP Controller" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="calc_ship_date" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Ship Date" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="in_transit_qty" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="In-Transit Qty" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="full_name" Type="Edm.String" MaxLength="80" sap:label="Deere Contact" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="smtp_addr" Type="Edm.String" MaxLength="241" sap:label="Deere Address" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="order_type_txt" Type="Edm.String" MaxLength="50" sap:label="Order Type" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="order_type" Type="Edm.String" MaxLength="5" sap:label="Order Type Status"/>
+                <Property Name="ship_status" Type="Edm.String" MaxLength="50" sap:label="Ship Status" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="status_txt" Type="Edm.String" MaxLength="20" sap:display-format="UpperCase" sap:label="Status" sap:quickinfo="Data Element for Schedule Line Follow-Up Status Text" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="status" Type="Edm.Byte" sap:label="Status" sap:quickinfo="Data Element for Schedule Line Follow-Up Status"/>
+                <Property Name="tracking_number" Type="Edm.String" MaxLength="20" sap:label="Tracking Number (CH Robinson)"/>
+                <Property Name="curr_date" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Current Date" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="curr_qty" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Current Quantity" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="new_date" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="New Delivery Date"/>
+                <Property Name="new_qty" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="New Quantity"/>
+                <Property Name="partial_date" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Partial Delivery Date"/>
+                <Property Name="partial_qty" Type="Edm.Decimal" Precision="13" Scale="3" sap:label="Partial Quantity"/>
+                <Property Name="reason" Type="Edm.String" MaxLength="60" sap:label="Reason" sap:value-list="fixed-values"/>
+                <Property Name="supplier_comment" Type="Edm.String" MaxLength="255" sap:label="Supplier Comment"/>
+                <Property Name="status_color" Type="Edm.Byte"/>
+                <Property Name="eindt_color" Type="Edm.Byte"/>
+                <Property Name="umdat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Rescheduling Date" sap:creatable="false" sap:updatable="false"/>
+            </EntityType>
+            <EntityType Name="ZMA0_I_SUPPLIER_REASONType" sap:label="View Entity for Supplier Reason" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="reason"/>
+                </Key>
+                <Property Name="reason" Type="Edm.String" Nullable="false" MaxLength="25"/>
+            </EntityType>
+            <EntityType Name="SAP__Currency" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CurrencyCode"/>
+                </Key>
+                <Property Name="CurrencyCode" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency" sap:semantics="currency-code"/>
+                <Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO code"/>
+                <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="15" sap:label="Short text"/>
+                <Property Name="DecimalPlaces" Type="Edm.Byte" Nullable="false" sap:label="Decimals"/>
+            </EntityType>
+            <EntityType Name="SAP__UnitOfMeasure" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="UnitCode"/>
+                </Key>
+                <Property Name="UnitCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Internal UoM" sap:semantics="unit-of-measure"/>
+                <Property Name="ISOCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="ISO code"/>
+                <Property Name="ExternalCode" Type="Edm.String" Nullable="false" MaxLength="3" sap:label="Commercial"/>
+                <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="UoM Text"/>
+                <Property Name="DecimalPlaces" Type="Edm.Int16" sap:label="Decimal Places"/>
+            </EntityType>
+            <EntityType Name="SAP__DocumentDescription" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID"/>
+                <Property Name="CreatedBy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="CreatedAt" Type="Edm.DateTime" Nullable="false" Precision="0" sap:label="Time Stamp"/>
+                <Property Name="FileName" Type="Edm.String" Nullable="false" MaxLength="256"/>
+                <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="256"/>
+                <NavigationProperty Name="Format" Relationship="cds_zma0_sfut_supplier_ui.to_format" FromRole="FromRole_to_format" ToRole="ToRole_to_format"/>
+                <NavigationProperty Name="TableColumns" Relationship="cds_zma0_sfut_supplier_ui.to_tablecolumns" FromRole="FromRole_to_tablecolumns" ToRole="ToRole_to_tablecolumns"/>
+                <NavigationProperty Name="CoverPage" Relationship="cds_zma0_sfut_supplier_ui.to_coverpage" FromRole="FromRole_to_coverpage" ToRole="ToRole_to_coverpage"/>
+                <NavigationProperty Name="Signature" Relationship="cds_zma0_sfut_supplier_ui.to_signature" FromRole="FromRole_to_signature" ToRole="ToRole_to_signature"/>
+            </EntityType>
+            <EntityType Name="SAP__Format" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DoEnableAccessibility" Type="Edm.Boolean" Nullable="false" sap:label="Indicator" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="FontSize" Type="Edm.Int32" Nullable="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Orientation" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="PaperSize" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__TableColumns" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                    <PropertyRef Name="Name"/>
+                    <PropertyRef Name="Header"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Header" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="HorizontalAlignment" Type="Edm.String" Nullable="false" MaxLength="10" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__CoverPage" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Title"/>
+                    <PropertyRef Name="Id"/>
+                    <PropertyRef Name="Name"/>
+                </Key>
+                <Property Name="Title" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Value" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="SAP__Signature" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="DoSign" Type="Edm.Boolean" Nullable="false" sap:label="Indicator" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Reason" Type="Edm.String" Nullable="false" MaxLength="256" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="to_tablecolumns" sap:content-version="1">
+                <End Type="cds_zma0_sfut_supplier_ui.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_tablecolumns"/>
+                <End Type="cds_zma0_sfut_supplier_ui.SAP__TableColumns" Multiplicity="*" Role="ToRole_to_tablecolumns"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_tablecolumns">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_tablecolumns">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="to_coverpage" sap:content-version="1">
+                <End Type="cds_zma0_sfut_supplier_ui.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_coverpage"/>
+                <End Type="cds_zma0_sfut_supplier_ui.SAP__CoverPage" Multiplicity="*" Role="ToRole_to_coverpage"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_coverpage">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_coverpage">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="to_signature" sap:content-version="1">
+                <End Type="cds_zma0_sfut_supplier_ui.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_signature"/>
+                <End Type="cds_zma0_sfut_supplier_ui.SAP__Signature" Multiplicity="1" Role="ToRole_to_signature"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_signature">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_signature">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="to_format" sap:content-version="1">
+                <End Type="cds_zma0_sfut_supplier_ui.SAP__DocumentDescription" Multiplicity="1" Role="FromRole_to_format"/>
+                <End Type="cds_zma0_sfut_supplier_ui.SAP__Format" Multiplicity="1" Role="ToRole_to_format"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_to_format">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="ToRole_to_format">
+                        <PropertyRef Name="Id"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="cds_zma0_sfut_supplier_ui_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx pdf">
+                <EntitySet Name="SupplierDataSet" EntityType="cds_zma0_sfut_supplier_ui.SupplierDataSetType" sap:creatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1" sap:updatable-path="Update_mc"/>
+                <EntitySet Name="ZMA0_I_SUPPLIER_REASON" EntityType="cds_zma0_sfut_supplier_ui.ZMA0_I_SUPPLIER_REASONType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__Currencies" EntityType="cds_zma0_sfut_supplier_ui.SAP__Currency" sap:content-version="1"/>
+                <EntitySet Name="SAP__UnitsOfMeasure" EntityType="cds_zma0_sfut_supplier_ui.SAP__UnitOfMeasure" sap:content-version="1"/>
+                <EntitySet Name="SAP__MyDocumentDescriptions" EntityType="cds_zma0_sfut_supplier_ui.SAP__DocumentDescription" sap:content-version="1"/>
+                <EntitySet Name="SAP__FormatSet" EntityType="cds_zma0_sfut_supplier_ui.SAP__Format" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__TableColumnsSet" EntityType="cds_zma0_sfut_supplier_ui.SAP__TableColumns" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__CoverPageSet" EntityType="cds_zma0_sfut_supplier_ui.SAP__CoverPage" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="SAP__SignatureSet" EntityType="cds_zma0_sfut_supplier_ui.SAP__Signature" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+                <AssociationSet Name="to_formatSet" Association="cds_zma0_sfut_supplier_ui.to_format" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_format"/>
+                    <End EntitySet="SAP__FormatSet" Role="ToRole_to_format"/>
+                </AssociationSet>
+                <AssociationSet Name="to_tablecolumnsSet" Association="cds_zma0_sfut_supplier_ui.to_tablecolumns" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_tablecolumns"/>
+                    <End EntitySet="SAP__TableColumnsSet" Role="ToRole_to_tablecolumns"/>
+                </AssociationSet>
+                <AssociationSet Name="to_signatureSet" Association="cds_zma0_sfut_supplier_ui.to_signature" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_signature"/>
+                    <End EntitySet="SAP__SignatureSet" Role="ToRole_to_signature"/>
+                </AssociationSet>
+                <AssociationSet Name="to_coverpageSet" Association="cds_zma0_sfut_supplier_ui.to_coverpage" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="SAP__MyDocumentDescriptions" Role="FromRole_to_coverpage"/>
+                    <End EntitySet="SAP__CoverPageSet" Role="ToRole_to_coverpage"/>
+                </AssociationSet>
+                <FunctionImport Name="accept" ReturnType="cds_zma0_sfut_supplier_ui.SupplierDataSetType" EntitySet="SupplierDataSet" m:HttpMethod="POST" sap:action-for="cds_zma0_sfut_supplier_ui.SupplierDataSetType" sap:applicable-path="accept_ac">
+                    <Parameter Name="ebeln" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="ebelp" Type="Edm.String" Mode="In" MaxLength="5"/>
+                    <Parameter Name="etenr" Type="Edm.String" Mode="In" MaxLength="4"/>
+                    <Parameter Name="pkkey" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="pabnum" Type="Edm.String" Mode="In" MaxLength="10"/>
+                    <Parameter Name="pabpos" Type="Edm.String" Mode="In" MaxLength="4"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="cds_zma0_sfut_supplier_ui.SupplierDataSetType/reason" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Reason"/>
+                        <PropertyValue Property="CollectionPath" String="ZMA0_I_SUPPLIER_REASON"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="reason"/>
+                                    <PropertyValue Property="ValueListProperty" String="reason"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues"/>
+            </Annotations>
+            <Annotations Target="cds_zma0_sfut_supplier_ui.cds_zma0_sfut_supplier_ui_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="cds_zma0_sfut_supplier_ui.cds_zma0_sfut_supplier_ui_Entities/SupplierDataSet" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>accept_ac</PropertyPath>
+                                <PropertyPath>Update_mc</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>accept_ac</PropertyPath>
+                                <PropertyPath>Update_mc</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zma0_sfut_supplier_ui.cds_zma0_sfut_supplier_ui_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Org.OData.Capabilities.V1.BatchSupport">
+                    <Record Type="Org.OData.Capabilities.V1.BatchSupportType">
+                        <PropertyValue Property="ReferencesAcrossChangeSetsSupported" Bool="true"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__CodeList.UnitsOfMeasure">
+                    <Record>
+                        <PropertyValue Property="Url" String="./$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="SAP__UnitsOfMeasure"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="cds_zma0_sfut_supplier_ui.SAP__Currency/CurrencyCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.Text" Path="Text"/>
+                <Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/>
+                <Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/>
+            </Annotations>
+            <Annotations Target="cds_zma0_sfut_supplier_ui.SAP__UnitOfMeasure/UnitCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__common.Text" Path="Text"/>
+                <Annotation Term="SAP__common.UnitSpecificScale" Path="DecimalPlaces"/>
+                <Annotation Term="SAP__CodeList.StandardCode" Path="ISOCode"/>
+                <Annotation Term="SAP__CodeList.ExternalCode" Path="ExternalCode"/>
+            </Annotations>
+            <Annotations Target="cds_zma0_sfut_supplier_ui.SAP__UnitOfMeasure" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="SAP__core.AlternateKeys">
+                    <Collection>
+                        <Record>
+                            <PropertyValue Property="Key">
+                                <Collection>
+                                    <Record>
+                                        <PropertyValue Property="Name" Path="ExternalCode"/>
+                                        <PropertyValue Property="Alias" String="ExternalCode"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://ecc20fc2-93b9-4b64-ae23-bcf39405ffbe.abap.us10.hana.ondemand.com/sap/opu/odata/sap/ZMA0_SFUT_SUPPLIER_UI_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://ecc20fc2-93b9-4b64-ae23-bcf39405ffbe.abap.us10.hana.ondemand.com/sap/opu/odata/sap/ZMA0_SFUT_SUPPLIER_UI_O2/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
