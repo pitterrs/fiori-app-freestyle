@@ -2,88 +2,42 @@
     controllerName="com.deere.sfut.supplierappv2.controller.Worklist"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns:semantic="sap.f.semantic">
+    xmlns:semantic="sap.f.semantic"
+    height="100%"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    >
 
-    <semantic:SemanticPage
-        id="page"
-        headerPinnable="false"
-        toggleHeaderOnTitleClick="false">
-
-        <semantic:titleHeading>
-            <Title
-                text="{i18n>worklistTitle}"
-                level="H2"/>
-        </semantic:titleHeading>
-
-        <semantic:content>
-            <Table
-                id="table"
-                width="auto"
-                items="{
-                    path: '/SupplierDataSet',
-                    sorter: {
-                        path: 'ebeln',
-                        descending: false
-                    }
-                }"
-                noDataText="{worklistView>/tableNoDataText}"
-                busyIndicatorDelay="{worklistView>/tableBusyDelay}"
-                growing="true"
-                growingScrollToLoad="true"
-                updateFinished=".onUpdateFinished">
-
-                <headerToolbar>
-                    <OverflowToolbar>
-                        <Title
-                            id="tableHeader"
-                            text="{worklistView>/worklistTableTitle}"
-                            level="H3"/>
-                        <ToolbarSpacer />
-                        <SearchField
-                            id="searchField"
-                            tooltip="{i18n>worklistSearchTooltip}"
-                            search=".onSearch">
-                            <layoutData>
-                                <OverflowToolbarLayoutData
-                                    maxWidth="200px"
-                                    priority="NeverOverflow"/>
-                            </layoutData>
-                        </SearchField>
-                    </OverflowToolbar>
-                </headerToolbar>
-
-                <columns>
-                    <Column id="nameColumn">
-                        <Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
-                    </Column>
-                    <Column id="unitNumberColumn" hAlign="End">
-                        <Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
-                    </Column>
-                </columns>
-
-                <items>
-                    <ColumnListItem
-                        type="Navigation"
-                        press=".onPress">
-                        <cells>
-                            <ObjectIdentifier
-                                title="{ebeln}"/>
-                            <ObjectNumber
-                                number="{
-                                    path: 'bal_qty_w_asn',
-                                    formatter: '.formatter.numberUnit'
-                                }"
-                                unit="{ekgrp}" />
-                        </cells>
-                    </ColumnListItem>
-                </items>
-            </Table>
-        </semantic:content>
-
-        <semantic:sendEmailAction>
-            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
-        </semantic:sendEmailAction>
-
-    </semantic:SemanticPage>
+        <!-- use this to make the table occupy the available screen height -->
+        <VBox fitContainer="true">
+            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="SupplierDataSet" persistencyKey="SmartFilter_Explored" basicSearchFieldName="ebeln" enableBasicSearch="true" >
+                <smartFilterBar:controlConfiguration>
+                    <smartFilterBar:ControlConfiguration key="ebeln">
+                    <smartFilterBar:defaultFilterValues>
+                            <smartFilterBar:SelectOption low="5500074665">
+                            </smartFilterBar:SelectOption>
+                        </smartFilterBar:defaultFilterValues>
+                    </smartFilterBar:ControlConfiguration>
+                    <smartFilterBar:ControlConfiguration key="werks">
+                        <smartFilterBar:defaultFilterValues>
+                                <smartFilterBar:SelectOption low="HX01">
+                                </smartFilterBar:SelectOption>
+                            </smartFilterBar:defaultFilterValues>
+                        </smartFilterBar:ControlConfiguration>
+                </smartFilterBar:controlConfiguration>
+                <!-- layout data used to make the table growing but the filter bar fixed -->
+                <smartFilterBar:layoutData>
+                    <FlexItemData shrinkFactor="0"/>
+                </smartFilterBar:layoutData>
+            </smartFilterBar:SmartFilterBar>
+            <smartTable:SmartTable id="LineItemsSmartTable" entitySet="SupplierDataSet" smartFilterId="smartFilterBar" tableType="Table" useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items" showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true" editTogglable="true" app:useSmartToggle="true">
+                <!-- layout data used to make the table growing but the filter bar fixed -->
+                <smartTable:layoutData>
+                    <FlexItemData growFactor="1" baseSize="0%"/>
+                </smartTable:layoutData>
+            </smartTable:SmartTable>
+        </VBox>
 
 </mvc:View>

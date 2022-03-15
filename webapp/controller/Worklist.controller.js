@@ -19,7 +19,7 @@ sap.ui.define([
          * Called when the worklist controller is instantiated.
          * @public
          */
-        onInit : function () {
+        onInit: function () {
             var oViewModel;
 
             // keeps the search state
@@ -27,12 +27,27 @@ sap.ui.define([
 
             // Model used to manipulate control states
             oViewModel = new JSONModel({
-                worklistTableTitle : this.getResourceBundle().getText("worklistTableTitle"),
+                worklistTableTitle: this.getResourceBundle().getText("worklistTableTitle"),
                 shareSendEmailSubject: this.getResourceBundle().getText("shareSendEmailWorklistSubject"),
                 shareSendEmailMessage: this.getResourceBundle().getText("shareSendEmailWorklistMessage", [location.href]),
-                tableNoDataText : this.getResourceBundle().getText("tableNoDataText")
+                tableNoDataText: this.getResourceBundle().getText("tableNoDataText")
             });
             this.setModel(oViewModel, "worklistView");
+
+        },
+
+        onBeforeExport: function (oEvt) {
+
+            var mExcelSettings = oEvt.getParameter("exportSettings");
+            
+            // GW export
+            if (mExcelSettings.url) {
+                return;
+            }
+            
+            // For UI5 Client Export --> The settings contains sap.ui.export.SpreadSheet relevant settings that be used to modify the output of excel
+            // Disable Worker as Mockserver is used in Demokit sample --> Do not use this for real applications!
+            mExcelSettings.worker = false;
 
         },
 
@@ -49,7 +64,7 @@ sap.ui.define([
          * @param {sap.ui.base.Event} oEvent the update finished event
          * @public
          */
-        onUpdateFinished : function (oEvent) {
+        onUpdateFinished: function (oEvent) {
             // update the worklist's object counter after the table update
             var sTitle,
                 oTable = oEvent.getSource(),
@@ -69,7 +84,7 @@ sap.ui.define([
          * @param {sap.ui.base.Event} oEvent the table selectionChange event
          * @public
          */
-        onPress : function (oEvent) {
+        onPress: function (oEvent) {
             // The source is the list item that got pressed
             this._showObject(oEvent.getSource());
         },
@@ -79,13 +94,13 @@ sap.ui.define([
          * Navigate back in the browser history
          * @public
          */
-        onNavBack : function() {
+        onNavBack: function () {
             // eslint-disable-next-line sap-no-history-manipulation
             history.go(-1);
         },
 
 
-        onSearch : function (oEvent) {
+        onSearch: function (oEvent) {
             if (oEvent.getParameters().refreshButtonPressed) {
                 // Search field's 'refresh' button has been pressed.
                 // This is visible if you select any main list item.
@@ -109,7 +124,7 @@ sap.ui.define([
          * and group settings and refreshes the list binding.
          * @public
          */
-        onRefresh : function () {
+        onRefresh: function () {
             var oTable = this.byId("table");
             oTable.getBinding("items").refresh();
         },
@@ -123,7 +138,7 @@ sap.ui.define([
          * @param {sap.m.ObjectListItem} oItem selected Item
          * @private
          */
-        _showObject : function (oItem) {
+        _showObject: function (oItem) {
             this.getRouter().navTo("object", {
                 objectId: oItem.getBindingContext().getPath().substring("/SupplierDataSet".length)
             });
@@ -134,7 +149,7 @@ sap.ui.define([
          * @param {sap.ui.model.Filter[]} aTableSearchState An array of filters for the search
          * @private
          */
-        _applySearch: function(aTableSearchState) {
+        _applySearch: function (aTableSearchState) {
             var oTable = this.byId("table"),
                 oViewModel = this.getModel("worklistView");
             oTable.getBinding("items").filter(aTableSearchState, "Application");
