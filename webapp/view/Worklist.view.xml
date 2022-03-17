@@ -1,6 +1,7 @@
 <mvc:View
     controllerName="com.deere.sfut.supplierappv2.controller.Worklist"
     xmlns="sap.m"
+    xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns:semantic="sap.f.semantic"
     height="100%"
@@ -11,33 +12,347 @@
     >
 
         <!-- use this to make the table occupy the available screen height -->
-        <VBox fitContainer="true">
-            <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="SupplierDataSet" persistencyKey="SmartFilter_Explored" basicSearchFieldName="ebeln" enableBasicSearch="true" >
-                <smartFilterBar:controlConfiguration>
-                    <smartFilterBar:ControlConfiguration key="ebeln" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
-                    </smartFilterBar:ControlConfiguration>
-                    <smartFilterBar:ControlConfiguration key="bsart" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
-                    </smartFilterBar:ControlConfiguration>
-                    <smartFilterBar:ControlConfiguration key="matnr" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
-                    </smartFilterBar:ControlConfiguration>
-                    <smartFilterBar:ControlConfiguration key="werks" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
-                    </smartFilterBar:ControlConfiguration>
-                </smartFilterBar:controlConfiguration>
-                <!-- layout data used to make the table growing but the filter bar fixed -->
-                <smartFilterBar:layoutData>
-                    <FlexItemData shrinkFactor="0"/>
-                </smartFilterBar:layoutData>
-            </smartFilterBar:SmartFilterBar>
-            <smartTable:SmartTable id="LineItemsSmartTable" entitySet="SupplierDataSet" smartFilterId="smartFilterBar" tableType="Table" 
-                useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items" 
-                showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" 
-                enableAutoColumnWidth="true" editTogglable="true" app:useSmartToggle="true"
-                initiallyVisibleFields="bsart,matnr,maktx,plant_name,bal_qty_w_asn,calc_ship_date,eindt,umdat,status_txt" >
-                <!-- layout data used to make the table growing but the filter bar fixed -->
-                <smartTable:layoutData>
-                    <FlexItemData growFactor="1" baseSize="0%"/>
-                </smartTable:layoutData>
-            </smartTable:SmartTable>
-        </VBox>
+        <ScrollContainer
+                height="100%"
+                width="100%"
+                vertical="true"
+                focusable="true">
+            <VBox fitContainer="true">
+                <smartFilterBar:SmartFilterBar id="smartFilterBar" entitySet="SupplierDataSet" persistencyKey="SmartFilter_Explored" basicSearchFieldName="ebeln" enableBasicSearch="true" >
+                    <smartFilterBar:controlConfiguration>
+                        <smartFilterBar:ControlConfiguration key="ebeln" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
+                        </smartFilterBar:ControlConfiguration>
+                        <smartFilterBar:ControlConfiguration key="bsart" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
+                        </smartFilterBar:ControlConfiguration>
+                        <smartFilterBar:ControlConfiguration key="matnr" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
+                        </smartFilterBar:ControlConfiguration>
+                        <smartFilterBar:ControlConfiguration key="werks" visibleInAdvancedArea="true" preventInitialDataFetchInValueHelpDialog="true">
+                        </smartFilterBar:ControlConfiguration>
+                    </smartFilterBar:controlConfiguration>
+                    <!-- layout data used to make the table growing but the filter bar fixed -->
+                    <smartFilterBar:layoutData>
+                        <FlexItemData shrinkFactor="0"/>
+                    </smartFilterBar:layoutData>
+                </smartFilterBar:SmartFilterBar>
+                <smartTable:SmartTable id="LineItemsSmartTable" entitySet="SupplierDataSet" smartFilterId="smartFilterBar" tableType="Table" 
+                    useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items" 
+                    showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" 
+                    enableAutoColumnWidth="true" editTogglable="true" app:useSmartToggle="true"
+                    initiallyVisibleFields="" >
+
+
+                    <Table>
+                        <columns>
+                        <!-- Columns that are on home page -->
+                            <Column id="bsart" hAlign="Begin" visible="true">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "bsart", "autoColumnWidth": \{ "visibleProperty": "bsart" }, "columnIndex": 0, 
+                                        "leadingProperty": "bsart", "sortProperty": "bsart", "additionalProperty": "bsart", "description": "bsart",
+                                        "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/bsart/@sap:label}"/>
+                            </Column>
+                            <Column id="matnr" hAlign="Begin" visible="true">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "matnr", "autoColumnWidth": \{ "visibleProperty": "matnr" },  "leadingProperty": "matnr", "sortProperty": "matnr", "additionalProperty": "matnr", "description": "matnr", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/matnr/@sap:label}"/>
+                            </Column>
+                            <Column id="MAKTX" hAlign="Begin" visible="true">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "MAKTX", "autoColumnWidth": \{ "visibleProperty": "MAKTX" },  "leadingProperty": "MAKTX", "sortProperty": "MAKTX", "additionalProperty": "MAKTX", "description": "MAKTX", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/MAKTX/@sap:label}"/>
+                            </Column>
+                            <Column id="plant_name" hAlign="Begin" visible="true">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "plant_name", "autoColumnWidth": \{ "visibleProperty": "plant_name" }, "leadingProperty": "plant_name", "sortProperty": "plant_name", "additionalProperty": "plant_name", "description": "plant_name", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/plant_name/@sap:label}"/>
+                            </Column>
+                            <Column id="bal_qty_w_asn" hAlign="Begin" visible="true">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "bal_qty_w_asn", "autoColumnWidth": \{ "visibleProperty": "bal_qty_w_asn" }, "leadingProperty": "bal_qty_w_asn", "sortProperty": "bal_qty_w_asn", "additionalProperty": "bal_qty_w_asn", "description": "bal_qty_w_asn", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/bal_qty_w_asn/@sap:label}"/>
+                            </Column>
+                            <Column id="eindt" hAlign="Begin" visible="true">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "eindt", "autoColumnWidth": \{ "visibleProperty": "eindt" },  "leadingProperty": "eindt", "sortProperty": "eindt", "additionalProperty": "eindt", "description": "eindt", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/eindt/@sap:label}"/>
+                            </Column>
+                            <Column id="umdat" hAlign="Begin" visible="true">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "umdat", "autoColumnWidth": \{ "visibleProperty": "umdat" }, "leadingProperty": "umdat", "sortProperty": "umdat", "additionalProperty": "umdat", "description": "umdat", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/umdat/@sap:label}"/>
+                            </Column>
+                            <Column id="status_txt" hAlign="Begin" visible="true">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "status_txt", "autoColumnWidth": \{ "visibleProperty": "status_txt" }, "leadingProperty": "status_txt", "sortProperty": "status_txt", "additionalProperty": "status_txt", "description": "status_txt", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/status_txt/@sap:label}"/>
+                            </Column>
+                            <Column id="action" hAlign="Begin" width="130px">
+                                <customData>
+                                    <core:CustomData key="p13nData"
+                                                    value='\{"columnKey": "action", "autoColumnWidth": \{ "visibleProperty": "action" }, "columnIndex": 1, "leadingProperty": "action", "sortProperty": "action", "additionalProperty": "action", "description": "action", "displayBehaviour": "descriptionOnly"}' />
+                                </customData>
+                                <Text text="{/#SupplierDataSet/action/@sap:label}" />
+                            </Column>
+                            <!-- Columns that are not on home page -->
+                            <Column id="werks" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "werks", "autoColumnWidth": \{ "visibleProperty": "werks" }, "leadingProperty": "werks", "sortProperty": "werks", "additionalProperty": "werks", "description": "werks", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/werks/@sap:label}"/>
+                            </Column>
+                            <Column id="berid" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "berid", "autoColumnWidth": \{ "visibleProperty": "berid" }, "leadingProperty": "berid", "sortProperty": "berid", "additionalProperty": "berid", "description": "berid", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/berid/@sap:label}"/>
+                            </Column>
+                            <Column id="bertx" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "bertx", "autoColumnWidth": \{ "visibleProperty": "bertx" }, "leadingProperty": "bertx", "sortProperty": "bertx", "additionalProperty": "bertx", "description": "bertx", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/bertx/@sap:label}"/>
+                            </Column>
+                            <Column id="ekgrp" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "ekgrp", "autoColumnWidth": \{ "visibleProperty": "ekgrp" }, "leadingProperty": "ekgrp", "sortProperty": "ekgrp", "additionalProperty": "ekgrp", "description": "ekgrp", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/ekgrp/@sap:label}"/>
+                            </Column>
+                            <Column id="ebeln" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "ebeln", "autoColumnWidth": \{ "visibleProperty": "ebeln" }, "leadingProperty": "ebeln", "sortProperty": "ebeln", "additionalProperty": "ebeln", "description": "ebeln", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/ebeln/@sap:label}"/>
+                            </Column>
+                            <Column id="ebelp" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "ebelp", "autoColumnWidth": \{ "visibleProperty": "ebelp" }, "leadingProperty": "ebelp", "sortProperty": "ebelp", "additionalProperty": "ebelp", "description": "ebelp", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/ebelp/@sap:label}"/>
+                            </Column>
+                            <Column id="etenr" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "etenr", "autoColumnWidth": \{ "visibleProperty": "etenr" }, "leadingProperty": "etenr", "sortProperty": "etenr", "additionalProperty": "etenr", "description": "etenr", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/etenr/@sap:label}"/>
+                            </Column>
+                            <Column id="dispo" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "dispo", "autoColumnWidth": \{ "visibleProperty": "dispo" }, "leadingProperty": "dispo", "sortProperty": "dispo", "additionalProperty": "dispo", "description": "dispo", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/dispo/@sap:label}"/>
+                            </Column>
+                            <Column id="lifnr" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "lifnr", "autoColumnWidth": \{ "visibleProperty": "lifnr" }, "leadingProperty": "lifnr", "sortProperty": "lifnr", "additionalProperty": "lifnr", "description": "lifnr", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/lifnr/@sap:label}"/>
+                            </Column>
+                            <Column id="vendor_name" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "vendor_name", "autoColumnWidth": \{ "visibleProperty": "vendor_name" }, "leadingProperty": "vendor_name", "sortProperty": "vendor_name", "additionalProperty": "vendor_name", "description": "vendor_name", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/vendor_name/@sap:label}"/>
+                            </Column>
+                            <Column id="calc_ship_date" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "calc_ship_date", "autoColumnWidth": \{ "visibleProperty": "calc_ship_date" }, "leadingProperty": "calc_ship_date", "sortProperty": "calc_ship_date", "additionalProperty": "calc_ship_date", "description": "calc_ship_date", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/calc_ship_date/@sap:label}"/>
+                            </Column>
+                            <Column id="pabnum" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "pabnum", "autoColumnWidth": \{ "visibleProperty": "pabnum" }, "leadingProperty": "pabnum", "sortProperty": "pabnum", "additionalProperty": "pabnum", "description": "pabnum", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/pabnum/@sap:label}"/>
+                            </Column>
+                            <Column id="pabpos" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "pabpos", "autoColumnWidth": \{ "visibleProperty": "pabpos" }, "leadingProperty": "pabpos", "sortProperty": "pabpos", "additionalProperty": "pabpos", "description": "pabpos", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/pabpos/@sap:label}"/>
+                            </Column>
+                            <Column id="curr_date" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "curr_date", "autoColumnWidth": \{ "visibleProperty": "curr_date" }, "leadingProperty": "curr_date", "sortProperty": "curr_date", "additionalProperty": "curr_date", "description": "curr_date", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/curr_date/@sap:label}"/>
+                            </Column>
+                            <Column id="curr_qty" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "curr_qty", "autoColumnWidth": \{ "visibleProperty": "curr_qty" }, "leadingProperty": "curr_qty", "sortProperty": "curr_qty", "additionalProperty": "curr_qty", "description": "curr_qty", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/curr_qty/@sap:label}"/>
+                            </Column>
+                            <Column id="in_transit_qty" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "in_transit_qty", "autoColumnWidth": \{ "visibleProperty": "in_transit_qty" }, "leadingProperty": "in_transit_qty", "sortProperty": "in_transit_qty", "additionalProperty": "in_transit_qty", "description": "in_transit_qty", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/in_transit_qty/@sap:label}"/>
+                            </Column>
+                            <Column id="full_name" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "full_name", "autoColumnWidth": \{ "visibleProperty": "full_name" }, "leadingProperty": "full_name", "sortProperty": "full_name", "additionalProperty": "full_name", "description": "full_name", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/full_name/@sap:label}"/>
+                            </Column>
+                            <Column id="smtp_addr" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "smtp_addr", "autoColumnWidth": \{ "visibleProperty": "smtp_addr" }, "leadingProperty": "smtp_addr", "sortProperty": "smtp_addr", "additionalProperty": "smtp_addr", "description": "smtp_addr", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/smtp_addr/@sap:label}"/>
+                            </Column>
+                            <Column id="order_type_txt" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "order_type_txt", "autoColumnWidth": \{ "visibleProperty": "order_type_txt" }, "leadingProperty": "order_type_txt", "sortProperty": "order_type_txt", "additionalProperty": "order_type_txt", "description": "order_type_txt", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/order_type_txt/@sap:label}"/>
+                            </Column>
+                            <Column id="ship_from" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "ship_from", "autoColumnWidth": \{ "visibleProperty": "ship_from" }, "leadingProperty": "ship_from", "sortProperty": "ship_from", "additionalProperty": "ship_from", "description": "ship_from", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/ship_from/@sap:label}"/>
+                            </Column>
+                            <Column id="ship_from_name" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "ship_from_name", "autoColumnWidth": \{ "visibleProperty": "ship_from_name" }, "leadingProperty": "ship_from_name", "sortProperty": "ship_from_name", "additionalProperty": "ship_from_name", "description": "ship_from_name", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/ship_from_name/@sap:label}"/>
+                            </Column>
+                            <Column id="ship_to" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "ship_to", "autoColumnWidth": \{ "visibleProperty": "ship_to" }, "leadingProperty": "ship_to", "sortProperty": "ship_to", "additionalProperty": "ship_to", "description": "ship_to", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/ship_to/@sap:label}"/>
+                            </Column>
+                            <Column id="ship_status" hAlign="Begin" visible="false">
+                                <customData>
+                                    <core:CustomData key="p13nData" value='\{"columnKey": "ship_status", "autoColumnWidth": \{ "visibleProperty": "ship_status" }, "leadingProperty": "ship_status", "sortProperty": "ship_status", "additionalProperty": "ship_status", "description": "ship_status", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
+                                </customData>
+                                <Text text="{/#SupplierDataSet/ship_status/@sap:label}"/>
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Text text="{bsart}"/>
+                                </cells>
+                                <cells>
+                                    <Text text="{matnr}"/>
+                                </cells>
+                                <cells>
+                                    <Text text="{MAKTX}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{plant_name}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{bal_qty_w_asn}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{eindt}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{umdat}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{status_txt}" />
+                                </cells>
+                                <cells>
+                                    <HBox>
+                                        <Button type="Accept" text="Accept" press="onPress" />
+                                        <Button type="Reject" text="Reject" press="onPress" />
+                                    </HBox>
+                                </cells>
+                                <cells>
+                                    <Text text="{werks}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{berid}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{bertx}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{ekgrp}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{ebeln}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{ebelp}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{etenr}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{dispo}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{lifnr}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{vendor_name}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{calc_ship_date}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{pabnum}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{pabpos}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{curr_date}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{curr_qty}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{in_transit_qty}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{full_name}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{smtp_addr}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{order_type_txt}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{ship_from}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{ship_from_name}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{ship_to}" />
+                                </cells>
+                                <cells>
+                                    <Text text="{ship_status}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+
+
+                    <!-- layout data used to make the table growing but the filter bar fixed -->
+                    <smartTable:layoutData>
+                        <FlexItemData growFactor="1" baseSize="0%"/>
+                    </smartTable:layoutData>
+                </smartTable:SmartTable>
+            </VBox>
+        </ScrollContainer>
 
 </mvc:View>
