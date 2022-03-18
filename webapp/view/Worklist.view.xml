@@ -9,6 +9,7 @@
     xmlns:smartTable="sap.ui.comp.smarttable"
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:form="sap.ui.layout.form"
     >
 
         <!-- use this to make the table occupy the available screen height -->
@@ -58,7 +59,7 @@
                                 </customData>
                                 <Text text="{/#SupplierDataSet/matnr/@sap:label}"/>
                             </Column>
-                            <Column id="MAKTX" hAlign="Begin" visible="true" width="170px">
+                            <Column id="MAKTX" hAlign="Begin" visible="true" width="250px">
                                 <customData>
                                     <core:CustomData key="p13nData" value='\{"columnKey": "MAKTX", "autoColumnWidth": \{ "visibleProperty": "MAKTX" }, "columnIndex": 2,  "leadingProperty": "MAKTX", "sortProperty": "MAKTX", "additionalProperty": "MAKTX", "description": "MAKTX", "displayBehaviour": "descriptionOnly", "width": "50px"}'/>
                                 </customData>
@@ -76,13 +77,13 @@
                                 </customData>
                                 <Text text="{/#SupplierDataSet/bal_qty_w_asn/@sap:label}"/>
                             </Column>
-                            <Column id="calc_ship_date" hAlign="Begin" visible="true">
+                            <Column id="calc_ship_date" hAlign="Begin" visible="true" width="130px">
                                 <customData>
                                     <core:CustomData key="p13nData" value='\{"columnKey": "calc_ship_date", "autoColumnWidth": \{ "visibleProperty": "calc_ship_date" }, "columnIndex": 5, "leadingProperty": "calc_ship_date", "sortProperty": "calc_ship_date", "additionalProperty": "calc_ship_date", "description": "calc_ship_date", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
                                 </customData>
                                 <Text text="{/#SupplierDataSet/calc_ship_date/@sap:label}"/>
                             </Column>
-                            <Column id="eindt" hAlign="Begin" visible="true">
+                            <Column id="eindt" hAlign="Begin" visible="true" width="130px">
                                 <customData>
                                     <core:CustomData key="p13nData" value='\{"columnKey": "eindt", "autoColumnWidth": \{ "visibleProperty": "eindt" }, "columnIndex": 6,  "leadingProperty": "eindt", "sortProperty": "eindt", "additionalProperty": "eindt", "description": "eindt", "displayBehaviour": "descriptionOnly", "width": "360px"}'/>
                                 </customData>
@@ -259,13 +260,13 @@
                                     <Text text="{bal_qty_w_asn}" />
                                 </cells>
                                 <cells>
-                                    <Text text="{calc_ship_date}" />
+                                    <Text text="{path: 'calc_ship_date', type: 'sap.ui.model.odata.type.DateTime', constraints: { displayFormat: 'Date' }}" />
                                 </cells>
                                 <cells>
-                                    <Text text="{eindt}" />
+                                    <Text text="{path: 'eindt', type: 'sap.ui.model.odata.type.DateTime', constraints: { displayFormat: 'Date' }}" />
                                 </cells>
                                 <cells>
-                                    <Text text="{umdat}" />
+                                    <Text text="{path: 'umdat', type: 'sap.ui.model.odata.type.DateTime', constraints: { displayFormat: 'Date' }}" />
                                 </cells>
                                 <cells>
                                     <HBox>
@@ -313,7 +314,7 @@
                                     <Text text="{pabpos}" />
                                 </cells>
                                 <cells>
-                                    <Text text="{curr_date}" />
+                                    <Text text="{path: 'curr_date', type: 'sap.ui.model.odata.type.DateTime', constraints: { displayFormat: 'Date' }}" />
                                 </cells>
                                 <cells>
                                     <Text text="{curr_qty}" />
