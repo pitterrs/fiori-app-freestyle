@@ -270,8 +270,8 @@
                                 </cells>
                                 <cells>
                                     <HBox>
-                                        <Button type="Accept" text="Accept" press="onAction" />
-                                        <Button type="Reject" text="Reject" press="onAction" />
+                                        <Button type="Accept" text="Accept" press="onAction" enabled="{= ${umdat} > null }"/>
+                                        <Button type="Reject" text="Reject" press="onAction" enabled="{= ${umdat} > null }"/>
                                     </HBox>
                                 </cells>
                                 <cells>

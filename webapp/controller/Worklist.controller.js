@@ -161,7 +161,7 @@ sap.ui.define([
         onAction: function (oEvent) {
             console.log('Test')
             this._showObject(oEvent.getSource());
-        },
+        }
 
     });
 });
