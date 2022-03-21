@@ -43,6 +43,12 @@
 
 
                     <Table growing="true">
+                        <infoToolbar>
+				            <OverflowToolbar design="Transparent" height="2.5rem">
+					            <Button text="Save" icon="sap-icon://save"
+						        tooltip="Save all changes" press="onSave" />
+                            </OverflowToolbar>
+			            </infoToolbar>
                         <columns>
                         <!-- Columns that are on home page -->
                             <Column id="order_type_txt" hAlign="Begin" visible="true" width="85px">

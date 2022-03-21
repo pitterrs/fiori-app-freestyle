@@ -36,6 +36,10 @@ sap.ui.define([
 
         },
 
+        onSave: function (oEvent) {
+            this.getModel().submitChanges();
+        },
+
         onBeforeExport: function (oEvt) {
 
             var mExcelSettings = oEvt.getParameter("exportSettings");
@@ -159,8 +163,7 @@ sap.ui.define([
             }
         },
         onAction: function (oEvent) {
-            console.log('Test')
-            this._showObject(oEvent.getSource());
+            // this._showObject(oEvent.getSource());
         }
 
     });
