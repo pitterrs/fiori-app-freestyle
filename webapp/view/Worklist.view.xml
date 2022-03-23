@@ -253,6 +253,9 @@
                         </columns>
                         <items>
                             <ColumnListItem>
+                            <customData>
+                                <core:CustomData key="value" value="{= ${worklistView>/today} > ${calc_ship_date} ? 'highlight' : ' ' }" writeToDom="true"></core:CustomData>
+                            </customData>
                                 <cells>
                                     <Text text="{order_type_txt}"/>
                                 </cells>

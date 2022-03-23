@@ -30,7 +30,8 @@ sap.ui.define([
                 worklistTableTitle: this.getResourceBundle().getText("worklistTableTitle"),
                 shareSendEmailSubject: this.getResourceBundle().getText("shareSendEmailWorklistSubject"),
                 shareSendEmailMessage: this.getResourceBundle().getText("shareSendEmailWorklistMessage", [location.href]),
-                tableNoDataText: this.getResourceBundle().getText("tableNoDataText")
+                tableNoDataText: this.getResourceBundle().getText("tableNoDataText"),
+                today : new Date( )
             });
             this.setModel(oViewModel, "worklistView");
 
