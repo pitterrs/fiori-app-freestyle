@@ -35,6 +35,7 @@
                         <FlexItemData shrinkFactor="0"/>
                     </smartFilterBar:layoutData>
                 </smartFilterBar:SmartFilterBar>
+                
                 <smartTable:SmartTable id="LineItemsSmartTable" entitySet="SupplierDataSet" smartFilterId="smartFilterBar" tableType="Table" 
                     useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items" 
                     showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" 
