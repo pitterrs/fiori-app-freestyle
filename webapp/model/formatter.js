@@ -2,7 +2,6 @@ sap.ui.define([], function () {
     "use strict";
 
     return {
-
         /**
          * Rounds the number unit value to 2 digits
          * @public
@@ -10,10 +9,16 @@ sap.ui.define([], function () {
          * @returns {string} sValue with 2 digits rounded
          */
         numberUnit : function (sValue) {
-            if (!sValue) {
-                return "";
-            }
-            return parseFloat(sValue).toFixed(2);
+            return !sValue ? "" : parseFloat(sValue).toFixed(2);
+        },
+        formatRowHighlight: function (shipDate) {
+           return shipDate < this.today ? "Warning" : "None";
+		},
+        formatIcon : function( shipDate ){
+            return shipDate < this.today ? "sap-icon://status-critical" : " ";
+        },
+        formatState : function( shipDate ){
+            return shipDate < this.today ? "Warning" : "None";
         }
 
     };

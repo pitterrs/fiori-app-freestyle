@@ -3,8 +3,9 @@ sap.ui.define([
     "sap/ui/model/json/JSONModel",
     "../model/formatter",
     "sap/ui/model/Filter",
-    "sap/ui/model/FilterOperator"
-], function (BaseController, JSONModel, formatter, Filter, FilterOperator) {
+    "sap/ui/model/FilterOperator",
+    "sap/ui/core/IconPool"
+], function (BaseController, JSONModel, formatter, Filter, FilterOperator, IconPool) {
     "use strict";
 
     return BaseController.extend("com.deere.sfut.supplierappv2.controller.Worklist", {
@@ -21,6 +22,7 @@ sap.ui.define([
          */
         onInit: function () {
             var oViewModel;
+            this.today = new Date( "2017","01","01" );
 
             // keeps the search state
             this._aTableSearchState = [];
@@ -31,28 +33,12 @@ sap.ui.define([
                 shareSendEmailSubject: this.getResourceBundle().getText("shareSendEmailWorklistSubject"),
                 shareSendEmailMessage: this.getResourceBundle().getText("shareSendEmailWorklistMessage", [location.href]),
                 tableNoDataText: this.getResourceBundle().getText("tableNoDataText"),
-                today : new Date( )
+                today : new Date( "2017","01","01" ) 
             });
             this.setModel(oViewModel, "worklistView");
 
         },
         
-        formatRowHighlight: function (oValue) {
-			// Your logic for rowHighlight goes here
-            var dd = String(oValue.getDate()).padStart(2, '0');
-            var mm = String(oValue.getMonth() + 1).padStart(2, '0'); //January is 0!
-            var yyyy = oValue.getFullYear();
-            oValue = yyyy + '/' + mm + '/' + dd;
-            
-            var today = new Date().toJSON().slice(0,10).replace(/-/g,'/');
-            
-			if (oValue < today) { 
-				return "Error";
-            }else {
-			    return "Success";
-            }
-		},
-
         onSave: function (oEvent) {
             this.getModel().submitChanges();
         },

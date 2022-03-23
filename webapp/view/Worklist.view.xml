@@ -252,10 +252,10 @@
                             </Column>
                         </columns>
                         <items>
-                            <ColumnListItem highlight="{path:'calc_ship_date', formatter:'.formatRowHighlight'}">
-                            <customData>
+                            <ColumnListItem highlight="{path:'calc_ship_date', formatter:'.formatter.formatRowHighlight'}">
+                            <!-- <customData>
                                 <core:CustomData key="value" value="{= ${worklistView>/today} > ${calc_ship_date} ? 'highlight' : ' ' }" writeToDom="true"></core:CustomData>
-                            </customData>
+                            </customData> -->
                                 <cells>
                                     <Text text="{order_type_txt}"/>
                                 </cells>
@@ -272,7 +272,9 @@
                                     <Text text="{bal_qty_w_asn}" />
                                 </cells>
                                 <cells>
-                                    <Text text="{path: 'calc_ship_date', type: 'sap.ui.model.odata.type.DateTime', constraints: { displayFormat: 'Date' }}" />
+                                 <ObjectStatus text = "{path: 'calc_ship_date', type: 'sap.ui.model.odata.type.DateTime', constraints: { displayFormat: 'Date' }}"
+                                               icon = "{path: 'calc_ship_date', formatter: '.formatter.formatIcon'}"
+                                               state = "{path: 'calc_ship_date', formatter: '.formatter.formatState'}" />
                                 </cells>
                                 <cells>
                                     <Text text="{path: 'eindt', type: 'sap.ui.model.odata.type.DateTime', constraints: { displayFormat: 'Date' }}" />
