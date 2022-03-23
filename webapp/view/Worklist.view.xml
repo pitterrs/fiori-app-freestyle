@@ -253,9 +253,6 @@
                         </columns>
                         <items>
                             <ColumnListItem highlight="{path:'calc_ship_date', formatter:'.formatter.formatRowHighlight'}">
-                            <!-- <customData>
-                                <core:CustomData key="value" value="{= ${worklistView>/today} > ${calc_ship_date} ? 'highlight' : ' ' }" writeToDom="true"></core:CustomData>
-                            </customData> -->
                                 <cells>
                                     <Text text="{order_type_txt}"/>
                                 </cells>
@@ -284,8 +281,8 @@
                                 </cells>
                                 <cells>
                                     <HBox>
-                                        <Button type="Accept" text="Accept" press="onAction" enabled="{= ${umdat} > null }"/>
-                                        <Button type="Reject" text="Reject" press="onAction" enabled="{= ${umdat} > null }"/>
+                                        <Button type="Accept" text="Accept" press="onAction" visible="{= ${umdat} > null }"/>
+                                        <Button type="Reject" text="Reject" press="onAction" visible="{= ${umdat} > null }"/>
                                     </HBox>
                                 </cells>
                                 <cells>

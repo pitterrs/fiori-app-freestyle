@@ -12,13 +12,13 @@ sap.ui.define([], function () {
             return !sValue ? "" : parseFloat(sValue).toFixed(2);
         },
         formatRowHighlight: function (shipDate) {
-           return shipDate < this.today ? "Warning" : "None";
+           return shipDate < this.today ? "Error" : "None";
 		},
         formatIcon : function( shipDate ){
-            return shipDate < this.today ? "sap-icon://status-critical" : " ";
+            return shipDate < this.today ? "sap-icon://error" : " ";
         },
         formatState : function( shipDate ){
-            return shipDate < this.today ? "Warning" : "None";
+            return shipDate < this.today ? "Error" : "None";
         }
 
     };
