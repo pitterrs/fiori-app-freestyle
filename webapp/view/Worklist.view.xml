@@ -252,7 +252,7 @@
                             </Column>
                         </columns>
                         <items>
-                            <ColumnListItem>
+                            <ColumnListItem highlight="{path:'calc_ship_date', formatter:'.formatRowHighlight'}">
                             <customData>
                                 <core:CustomData key="value" value="{= ${worklistView>/today} > ${calc_ship_date} ? 'highlight' : ' ' }" writeToDom="true"></core:CustomData>
                             </customData>

@@ -36,6 +36,22 @@ sap.ui.define([
             this.setModel(oViewModel, "worklistView");
 
         },
+        
+        formatRowHighlight: function (oValue) {
+			// Your logic for rowHighlight goes here
+            var dd = String(oValue.getDate()).padStart(2, '0');
+            var mm = String(oValue.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = oValue.getFullYear();
+            oValue = yyyy + '/' + mm + '/' + dd;
+            
+            var today = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+            
+			if (oValue < today) { 
+				return "Error";
+            }else {
+			    return "Success";
+            }
+		},
 
         onSave: function (oEvent) {
             this.getModel().submitChanges();
