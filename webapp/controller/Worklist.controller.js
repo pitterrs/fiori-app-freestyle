@@ -166,6 +166,15 @@ sap.ui.define([
         },
         onAction: function (oEvent) {
             // this._showObject(oEvent.getSource());
+        },
+        
+        onEditPromotionsPressed: function(oEvent){
+            var saveBtn = this.getView().byId("btnSave");
+            if(saveBtn.getVisible()) {
+                saveBtn.setVisible(false);
+            } else {
+                saveBtn.setVisible(true);
+            }
         }
 
     });

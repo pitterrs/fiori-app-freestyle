@@ -38,20 +38,17 @@
                 <smartTable:SmartTable id="LineItemsSmartTable" entitySet="SupplierDataSet" smartFilterId="smartFilterBar" tableType="Table" 
                     useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items" 
                     showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" 
-                    enableAutoColumnWidth="true" editTogglable="true" app:useSmartToggle="true"
+                    enableAutoColumnWidth="true" editTogglable="true" app:useSmartToggle="true" editToggled="onEditPromotionsPressed"
                     initiallyVisibleFields="new_date,new_qty" >
 
+                    <smartTable:customToolbar>
+			            <OverflowToolbar design="Transparent">
+				                <ToolbarSpacer/>
+				                <Button id="btnSave" text="Save" visible="false" icon="sap-icon://save" tooltip="Save all changes" press="onSave"/>
+			            </OverflowToolbar>
+		            </smartTable:customToolbar>
 
                     <Table growing="true">
-                        <infoToolbar>
-				            <OverflowToolbar design="Transparent" height="2.5rem">
-                            <ToolbarSpacer/>
-					            <Button text="Save" icon="sap-icon://save"
-						        tooltip="Save all changes" press="onSave"/>
-                            </OverflowToolbar>
-			            </infoToolbar>
-
-
                         <columns>
                         <!-- Columns that are on home page -->
                             <Column id="order_type_txt" hAlign="Begin" visible="true" width="85px">
