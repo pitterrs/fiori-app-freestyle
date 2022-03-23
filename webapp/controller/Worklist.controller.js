@@ -4,8 +4,7 @@ sap.ui.define([
     "../model/formatter",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
-    "sap/ui/core/IconPool"
-], function (BaseController, JSONModel, formatter, Filter, FilterOperator, IconPool) {
+], function (BaseController, JSONModel, formatter, Filter, FilterOperator) {
     "use strict";
 
     return BaseController.extend("com.deere.sfut.supplierappv2.controller.Worklist", {
@@ -22,7 +21,7 @@ sap.ui.define([
          */
         onInit: function () {
             var oViewModel;
-            this.today = new Date( "2017","01","01" );
+            this.today = new Date();
 
             // keeps the search state
             this._aTableSearchState = [];
@@ -33,7 +32,7 @@ sap.ui.define([
                 shareSendEmailSubject: this.getResourceBundle().getText("shareSendEmailWorklistSubject"),
                 shareSendEmailMessage: this.getResourceBundle().getText("shareSendEmailWorklistMessage", [location.href]),
                 tableNoDataText: this.getResourceBundle().getText("tableNoDataText"),
-                today : new Date( "2017","01","01" ) 
+                today : this.today 
             });
             this.setModel(oViewModel, "worklistView");
 
