@@ -40,7 +40,7 @@
                     useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" header="Line Items" 
                     showRowCount="true" persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" class="sapUiResponsiveContentPadding" 
                     enableAutoColumnWidth="true" editTogglable="true" app:useSmartToggle="true" editToggled="onEditPromotionsPressed"
-                    initiallyVisibleFields="new_date,new_qty" >
+                    initiallyVisibleFields="new_date,new_qty" ignoredFields="eindt_color,pkkey,order_type_txt,order_type,partial_date,partial_qty,reason,status_color,status,supplier_comment,tracking_number,pabnum,pabpos" >
 
                     <smartTable:customToolbar>
 			            <OverflowToolbar design="Transparent">
