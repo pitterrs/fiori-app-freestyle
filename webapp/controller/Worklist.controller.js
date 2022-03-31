@@ -4,7 +4,8 @@ sap.ui.define([
     "../model/formatter",
     "sap/ui/model/Filter",
     "sap/ui/model/FilterOperator",
-], function (BaseController, JSONModel, formatter, Filter, FilterOperator) {
+    "sap/m/MessageToast"
+], function (BaseController, JSONModel, formatter, Filter, FilterOperator, MessageToast) {
     "use strict";
 
     return BaseController.extend("com.deere.sfut.supplierappv2.controller.Worklist", {
@@ -35,11 +36,21 @@ sap.ui.define([
                 today : this.today 
             });
             this.setModel(oViewModel, "worklistView");
-
         },
         
-        onSave: function (oEvent) {
-            this.getModel().submitChanges();
+        onSave: function (oEvent) 
+        {
+         this.getModel().submitChanges
+         ({
+            success:function()
+            {
+                var message = this.getView().getModel("i18n").getResourceBundle().getText('msgSaveSuccessfull');
+                MessageToast.show(message);
+            }.bind(this), error:function()
+            {
+            }
+        });
+            
         },
 
         onBeforeExport: function (oEvt) {
