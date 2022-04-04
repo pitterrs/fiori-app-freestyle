@@ -1,0 +1,35 @@
+<mvc:View
+    controllerName="com.deere.sfut.supplierappv2.controller.Object"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:semantic="sap.f.semantic">
+
+    <semantic:SemanticPage
+        id="page"
+        headerPinnable="false"
+        toggleHeaderOnTitleClick="false"
+        busy="{objectView>/busy}"
+        busyIndicatorDelay="{objectView>/delay}">
+
+        <semantic:titleHeading>
+            <Title
+                text="{ebeln}"
+                level="H2"/>
+        </semantic:titleHeading>
+
+        <semantic:headerContent>
+            <ObjectNumber
+                number="{
+                    path: 'bal_qty_w_asn',
+                    formatter: '.formatter.numberUnit'
+                }"
+                unit="{ekgrp}" />
+        </semantic:headerContent>
+
+        <semantic:sendEmailAction>
+            <semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+        </semantic:sendEmailAction>
+
+    </semantic:SemanticPage>
+
+</mvc:View>
